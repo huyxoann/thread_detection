@@ -1,12 +1,36 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:provider/provider.dart';
 import 'package:thread_detection/config/route.dart';
+import 'package:thread_detection/repository/link_repository_impl.dart';
 import 'package:thread_detection/ui/theme.dart';
+import 'package:thread_detection/viewmodel/link_viewmodel.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+        options: const FirebaseOptions(
+      apiKey: "AIzaSyBNRTgjVX5ohiLNRzOtYKxqhpzjqHiIJXA",
+      authDomain: "thread-detection-70a74.firebaseapp.com",
+      projectId: "thread-detection-70a74",
+      storageBucket: "thread-detection-70a74.firebasestorage.app",
+      messagingSenderId: "151389378292",
+      appId: "1:151389378292:web:898621cc19fb5f531270a1",
+      measurementId: "G-XMYDWCPB6K",
+    ));
+  } else {
+    await Firebase.initializeApp();
+  }
+
   await Hive.initFlutter();
 
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+        create: (_) => LinkViewmodel(linkRepository: LinkRepositoryImpl())),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

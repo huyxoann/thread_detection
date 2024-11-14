@@ -26,6 +26,8 @@ class LinkCheckedTile extends StatelessWidget {
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onTertiaryContainer,
                 ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
               const SizedBox(height: 8.0),
               Text(
@@ -58,6 +60,8 @@ class LinkCheckedTile extends StatelessWidget {
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onError,
                 ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
               const SizedBox(height: 8.0),
               Text(
@@ -90,6 +94,8 @@ class LinkCheckedTile extends StatelessWidget {
                 style: textTheme.bodyLarge?.copyWith(
                   color: colorScheme.onError,
                 ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
               const SizedBox(height: 8.0),
               Text(
