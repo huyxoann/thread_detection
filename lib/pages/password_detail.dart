@@ -208,7 +208,33 @@ class _PasswordDetailPageState extends State<PasswordDetailPage> {
                   ),
                 ),
               ],
-            )
+            ),
+            if (DateTime.now().difference(account.createdAt).inDays > 30)
+              Container(
+                padding: const EdgeInsets.all(16.0),
+                decoration: BoxDecoration(
+                  color: Colors.redAccent,
+                  borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(
+                      LucideIcons.badge_alert,
+                      color: Colors.white,
+                    ),
+                    const SizedBox(width: 12.0),
+                    Expanded(
+                      child: Text(
+                        'Mật khẩu của bạn đã hơn 30 ngày, vui lòng đổi mật khẩu.',
+                        style: textTheme.bodyMedium?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
       ),

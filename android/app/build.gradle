@@ -26,6 +26,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.android.material:material:1.9.0' 
     implementation 'com.google.firebase:firebase-firestore' // Firestore library// Specify a valid version
+    implementation 'com.google.firebase:firebase-messaging'
+
 }
 
 def localProperties = new Properties()

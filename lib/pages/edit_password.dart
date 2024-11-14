@@ -75,7 +75,7 @@ class _EditPasswordPageState extends State<EditPasswordPage> {
       'email': emailController.text,
       'password': passwordController.text,
       'accountType': accountTypeSelected.name,
-      'createdAt': account.createdAt,
+      'createdAt': DateTime.now(),
     });
     debugPrint(
         'Account updated: ${labelController.text}, ${emailController.text}, ${passwordController.text}, ${accountTypeSelected.name}');

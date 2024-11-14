@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:thread_detection/pages/account_page.dart';
 import 'package:thread_detection/pages/check_link.dart';
 
@@ -40,12 +41,12 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(LucideIcons.key_round),
+            label: 'Tài khoản',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: 'Add',
+            icon: Icon(LucideIcons.link),
+            label: 'Kiểm tra link',
           ),
         ],
         currentIndex: _selectedIndex,
