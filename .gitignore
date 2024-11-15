@@ -48,3 +48,4 @@ key.properties
 my-release-key.jks
 /build
 build
+.app.zip
