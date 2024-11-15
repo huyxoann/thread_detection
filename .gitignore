@@ -47,3 +47,4 @@ app.*.map.json
 key.properties
 my-release-key.jks
 /build
+build
