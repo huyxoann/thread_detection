@@ -17,7 +17,7 @@ final router = GoRouter(initialLocation: '/login', routes: [
   GoRoute(
     name: 'home',
     path: '/',
-    builder: (context, state) => HomePage(),
+    builder: (context, state) => const HomePage(),
   ),
   GoRoute(
     name: 'account-list',

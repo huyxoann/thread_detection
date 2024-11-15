@@ -1,13 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:thread_detection/config/route.dart';
 import 'package:thread_detection/repository/link_repository_impl.dart';
-import 'package:thread_detection/services/firebase_api.dart';
-import 'package:thread_detection/services/noti_permission.dart';
 import 'package:thread_detection/ui/theme.dart';
 import 'package:thread_detection/viewmodel/link_viewmodel.dart';
 
@@ -36,7 +33,6 @@ void main() async {
   //   print("Message received: ${message.notification?.title}");
   // });
 
-  await FirebaseApi().initNotifications();
 
   await Hive.initFlutter();
 

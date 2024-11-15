@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:thread_detection/config/enum.dart';
 
 class LinkCheckedTile extends StatelessWidget {

@@ -76,6 +76,15 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    signingConfigs {
+        release {
+            storeFile file('key.properties')
+            storePassword System.getProperty('STORE_PASSWORD')
+            keyAlias System.getProperty('KEY_ALIAS')
+            keyPassword System.getProperty('KEY_PASSWORD')
+        }
+    }
 }
 
 allprojects {

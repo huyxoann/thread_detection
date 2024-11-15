@@ -17,7 +17,6 @@ class LinkViewmodel extends ChangeNotifier {
 
     try {
       links = await _linkRepository.getLinks();
-    } catch (e) {
     } finally {
       isLoading = false;
       notifyListeners();

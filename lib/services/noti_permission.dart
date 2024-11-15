@@ -1,17 +1,17 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 
-void requestNotificationPermission() async {
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
+// void requestNotificationPermission() async {
+//   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-  NotificationSettings settings = await messaging.requestPermission(
-    alert: true,
-    badge: true,
-    sound: true,
-  );
+//   NotificationSettings settings = await messaging.requestPermission(
+//     alert: true,
+//     badge: true,
+//     sound: true,
+//   );
 
-  if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-    print('User granted permission');
-  } else {
-    print('User declined or has not accepted permission');
-  }
-}
+//   if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+//     print('User granted permission');
+//   } else {
+//     print('User declined or has not accepted permission');
+//   }
+// }

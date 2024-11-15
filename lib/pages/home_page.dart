@@ -4,6 +4,8 @@ import 'package:thread_detection/pages/account_page.dart';
 import 'package:thread_detection/pages/check_link.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -13,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   final PageStorageBucket bucket = PageStorageBucket();
   final List<Widget> _pages = <Widget>[
     const AccountPage(title: "Account List"),
-    CheckingLinkPage()
+    const CheckingLinkPage()
   ];
 
   final List<GlobalKey<NavigatorState>> _navigatorKeys = [
