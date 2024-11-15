@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:thread_detection/pages/account_page.dart';
 import 'package:thread_detection/pages/check_link.dart';
+import 'package:thread_detection/pages/notebook_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,10 +16,12 @@ class _HomePageState extends State<HomePage> {
   final PageStorageBucket bucket = PageStorageBucket();
   final List<Widget> _pages = <Widget>[
     const AccountPage(title: "Account List"),
-    const CheckingLinkPage()
+    const CheckingLinkPage(),
+    NotebookPage(),
   ];
 
   final List<GlobalKey<NavigatorState>> _navigatorKeys = [
+    GlobalKey<NavigatorState>(),
     GlobalKey<NavigatorState>(),
     GlobalKey<NavigatorState>(),
   ];
@@ -49,6 +52,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(LucideIcons.link),
             label: 'Kiểm tra link',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(LucideIcons.book),
+            label: 'Cẩm nang',
           ),
         ],
         currentIndex: _selectedIndex,
