@@ -46,3 +46,4 @@ app.*.map.json
 .fvm/
 key.properties
 my-release-key.jks
+/build
