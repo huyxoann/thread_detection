@@ -73,20 +73,18 @@ class _CheckingLinkPageState extends State<CheckingLinkPage> {
       if (uriHost == scamLink || scamLink.contains(uriHost)) {
         await saveLinkHistoryCheck(LinkType.suspicious, url);
         return;
-      } else {
-        querySnapshot = await firestore.collection('safe_links').get();
-        for (var doc in querySnapshot.docs) {
-          final scamLink = doc['link'];
-          if (uriHost == scamLink || scamLink.contains(uriHost)) {
-            await saveLinkHistoryCheck(LinkType.safe, url);
-            return;
-          } else {
-            await saveLinkHistoryCheck(LinkType.unsafe, url);
-            return;
-          }
-        }
       }
     }
+    querySnapshot = await firestore.collection('safe_links').get();
+    for (var doc in querySnapshot.docs) {
+      final scamLink = doc['link'];
+      if (uriHost == scamLink || scamLink.contains(uriHost)) {
+        await saveLinkHistoryCheck(LinkType.safe, url);
+        return;
+      }
+    }
+    await saveLinkHistoryCheck(LinkType.unsafe, url);
+    return;
   }
 
   String getMainDomain(String url) {
